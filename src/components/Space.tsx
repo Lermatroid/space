@@ -98,7 +98,7 @@ export default function Space() {
 				<div className="absolute font-bold bottom-[15%] max-w-[500px] text-xs">
 					<p>
 						🧠 Every single pixel is 100km. This means that mercury's diameter of 4879km takes up a
-						total of ~ 48 pixels.
+						total of ~ 48 pixels out of the ~ 58 million you have scrolled so far.
 					</p>
 				</div>
 			</SpaceBody>
@@ -108,6 +108,16 @@ export default function Space() {
 					fill
 					src={"/img/bodies/venus.png"}
 					alt="Venus"
+					className="object-contain"
+				/>
+			</SpaceBody>
+			<SpaceBody classname="bg-black" widthKm={25000000} />
+			<SpaceBody widthKm={12742}>
+				<Image
+					id="earth"
+					fill
+					src={"/img/bodies/earth.png"}
+					alt="Earth"
 					className="object-contain"
 				/>
 			</SpaceBody>
