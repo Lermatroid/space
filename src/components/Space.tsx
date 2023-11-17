@@ -5,6 +5,7 @@ import SpaceBody from "./SpaceBody";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { useState, useRef } from "react";
 import Image from "next/image";
+import Tablet from "./Tablet";
 
 export default function Space() {
 	const universalRef = useRef(null);
@@ -51,10 +52,11 @@ export default function Space() {
 	// );
 
 	return (
-		<main className="max-h-screen h-screen bg-black w-min flex items-center justify-start overflow-y-hidden flex-nowrap font-inter">
-			<div className="bg-black border-white border-2 rounded p-5 text-white fixed z-20 bottom-0 mb-10 mr-2 right-0">
+		<main className="bg-[url('/img/stars.png')] bg-repeat max-h-screen h-screen bg-black w-min flex items-center justify-start overflow-y-hidden flex-nowrap font-inter">
+			{/* <div className="bg-black border-white border-2 rounded p-5 text-white fixed z-20 bottom-0 mb-10 mr-2 right-0">
 				<p>{distance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}km Travelled</p>
-			</div>
+			</div> */}
+			<Tablet distance={distance} />
 			<SpaceBody
 				classname="bg-gradient-to-r from-white via-yellow-300 to-orange-400"
 				widthKm={696340}
@@ -81,7 +83,7 @@ export default function Space() {
 					</p>
 				</Vertical>
 			</SpaceBody>
-			<SpaceBody classname="bg-black" widthKm={58000000} />
+			<SpaceBody widthKm={58000000} />
 			<SpaceBody widthKm={4879}>
 				<Image
 					id="mercury"
@@ -91,7 +93,7 @@ export default function Space() {
 					className="object-contain"
 				/>
 			</SpaceBody>
-			<SpaceBody classname="bg-black" widthKm={31000000}>
+			<SpaceBody widthKm={31000000}>
 				<div>
 					<p className="font-bold">&larr; Thats mercury, blink and you might have missed it!</p>
 				</div>
@@ -111,7 +113,7 @@ export default function Space() {
 					className="object-contain"
 				/>
 			</SpaceBody>
-			<SpaceBody classname="bg-black" widthKm={25000000} />
+			<SpaceBody widthKm={25000000} />
 			<SpaceBody widthKm={12742}>
 				<Image
 					id="earth"
@@ -120,6 +122,10 @@ export default function Space() {
 					alt="Earth"
 					className="object-contain"
 				/>
+			</SpaceBody>
+			<SpaceBody widthKm={140000000} />
+			<SpaceBody widthKm={6779}>
+				<Image id="mars" fill src={"/img/bodies/mars.png"} alt="Mars" className="object-contain" />
 			</SpaceBody>
 		</main>
 	);
