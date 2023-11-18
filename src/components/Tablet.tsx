@@ -9,7 +9,7 @@ interface TabletProps {
 }
 
 export default function Tablet({ distance }: TabletProps) {
-	const [currentView, setCurrentView] = useState<"overview" | "directory">("overview");
+	const [currentView, setCurrentView] = useState<"overview" | "directory" | "minified">("overview");
 	return currentView == "overview" ? (
 		<div className="w-[450px] h-[300px] bg-gray-700 rounded-xl fixed bottom-0 right-0 z-50 mr-5 mb-5 p-3 font-inter">
 			<div className="bg-gray-400 h-full w-full rounded-xl p-3 grid grid-cols-2 grid-rows-4 gap-3">
@@ -28,17 +28,23 @@ export default function Tablet({ distance }: TabletProps) {
 				<div className="col-span-2 row-span-2 bg-white rounded-xl h-full p-3">
 					Completing some details for here. More soon :)
 				</div>
-				<div className="col-span-2 grid grid-cols-2 bg-white rounded-xl h-14 p-1">
+				<div className="col-span-2 grid grid-cols-2 gap-1 bg-white rounded-xl h-14 p-1">
 					<button
 						onClick={() => setCurrentView("directory")}
 						className="bg-green-500 hover:bg-green-600 p-2 rounded-lg font-bold"
 					>
 						Open Directory
 					</button>
+					<button
+						onClick={() => setCurrentView("minified")}
+						className="bg-red-500 hover:bg-red-600 p-2 rounded-lg font-bold"
+					>
+						Close Tablet
+					</button>
 				</div>
 			</div>
 		</div>
-	) : (
+	) : currentView == "directory" ? (
 		<div className="w-[450px] h-[300px] bg-gray-700 rounded-xl fixed bottom-0 right-0 z-50 mr-5 mb-5 p-3 font-inter">
 			<div className="bg-gray-400 h-full w-full rounded-xl p-3 grid relative grid-cols-3 overflow-y-auto gap-3">
 				<button
@@ -78,5 +84,12 @@ export default function Tablet({ distance }: TabletProps) {
 				</Link>
 			</div>
 		</div>
+	) : (
+		<button
+			onClick={() => setCurrentView("overview")}
+			className="bg-green-500 hover:bg-green-600 p-2 rounded-lg font-bold fixed bottom-0 right-0 z-50 mr-5 mb-5"
+		>
+			Open Tablet
+		</button>
 	);
 }
