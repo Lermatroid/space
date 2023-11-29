@@ -127,6 +127,46 @@ export default function Space() {
 			<SpaceBody widthKm={6779}>
 				<Image id="mars" fill src={"/img/bodies/mars.png"} alt="Mars" className="object-contain" />
 			</SpaceBody>
+			<SpaceBody widthKm={550390000} />
+			<SpaceBody widthKm={142800}>
+				<Image
+					id="jupiter"
+					fill
+					src={"/img/bodies/jupiter.png"}
+					alt="Jupiter"
+					className="object-contain"
+				/>
+			</SpaceBody>
+			<SpaceBody widthKm={402000000} />
+			<SpaceBody widthKm={175000}>
+				<Image
+					id="saturn"
+					fill
+					src={"/img/bodies/saturn.png"}
+					alt="Saturn"
+					className="object-contain"
+				/>
+			</SpaceBody>
+			<SpaceBody widthKm={900000000} />
+			<SpaceBody widthKm={50000}>
+				<Image
+					id="uranus"
+					fill
+					src={"/img/bodies/uranus.webp"}
+					alt="Uranus"
+					className="object-contain"
+				/>
+			</SpaceBody>
+			<SpaceBody widthKm={1010000000} />
+			<SpaceBody widthKm={49244}>
+				<Image
+					id="neptune"
+					fill
+					src={"/img/bodies/neptune.png"}
+					alt="Neptune"
+					className="object-contain"
+				/>
+			</SpaceBody>
 		</main>
 	);
 }

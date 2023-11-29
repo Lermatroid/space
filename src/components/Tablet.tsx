@@ -21,12 +21,27 @@ export default function Tablet({ distance }: TabletProps) {
 						</p>
 					</div>
 					<div className="flex flex-col justify-center">
-						<p className="text-xs font-bold">Next Stop</p>
-						<p className="font-bold text-sm">The Sun</p>
+						<p className="text-xs font-bold">Distance (AU)</p>
+						<p className="font-bold text-sm">
+							{distance < 149597870 ? "< 1" : Math.round(distance / 149597870).toString()}
+							AU
+						</p>
 					</div>
 				</div>
-				<div className="col-span-2 row-span-2 bg-white rounded-xl h-full p-3">
-					Completing some details for here. More soon :)
+				<div className="col-span-2 row-span-2 bg-white rounded-xl h-full p-3 overflow-y-auto">
+					Welcome to space by pixels! Open the directory to quickly jump to a given space body (They
+					can be easy to miss if you scroll too fast!).
+					<br />
+					<br />
+					Distance between objects is based on the average distance between them in kilometers and
+					the diameter of said bodies as listed on nasa.gov; Due to eliptical orbits however, these
+					change greatly throughout the orbits of these bodies.{" "}
+					<Link
+						className="hover:underline text-blue-500"
+						href={"https://www.schoolsobservatory.org/learn/astro/esm/orbits/orb_ell"}
+					>
+						Click here to learn about eliptical orbits!
+					</Link>
 				</div>
 				<div className="col-span-2 grid grid-cols-2 gap-1 bg-white rounded-xl h-14 p-1">
 					<button
@@ -80,6 +95,45 @@ export default function Tablet({ distance }: TabletProps) {
 					<button className="aspect-square w-full relative bg-white rounded-xl">
 						<Image alt="mars" src="/img/bodies/mars.png" fill className="object-contain pb-5" />
 						<p className="absolute bottom-0 text-center w-full font-bold">Mars</p>
+					</button>
+				</Link>
+				<Link href="#jupiter">
+					<button className="aspect-square w-full relative bg-white rounded-xl">
+						<Image
+							alt="jupiter"
+							src="/img/bodies/jupiter.png"
+							fill
+							className="object-contain pb-5"
+						/>
+						<p className="absolute bottom-0 text-center w-full font-bold">Jupiter</p>
+					</button>
+				</Link>
+				<Link href="#saturn">
+					<button className="aspect-square w-full relative bg-white rounded-xl">
+						<Image alt="saturn" src="/img/bodies/saturn.png" fill className="object-contain pb-5" />
+						<p className="absolute bottom-0 text-center w-full font-bold">Saturn</p>
+					</button>
+				</Link>
+				<Link href="#uranus">
+					<button className="aspect-square w-full relative bg-white rounded-xl">
+						<Image
+							alt="uranus"
+							src="/img/bodies/uranus.webp"
+							fill
+							className="object-contain pb-5"
+						/>
+						<p className="absolute bottom-0 text-center w-full font-bold">Uranus</p>
+					</button>
+				</Link>
+				<Link href="#neptune">
+					<button className="aspect-square w-full relative bg-white rounded-xl">
+						<Image
+							alt="neptune"
+							src="/img/bodies/neptune.png"
+							fill
+							className="object-contain pb-5"
+						/>
+						<p className="absolute bottom-0 text-center w-full font-bold">Neptune</p>
 					</button>
 				</Link>
 			</div>
